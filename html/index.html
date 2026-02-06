@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bossmenu" class="container hidden">
+        <div class="header">
+            <h2>Boss Menu</h2>
+            <span id="closeBtn">&times;</span>
+        </div>
+        <div class="info">
+            <div><b>Job:</b> <span id="jobName"></span></div>
+            <div><b>Grade:</b> <span id="jobGrade"></span></div>
+            <div><b>Account Balance:</b> $<span id="accountBalance"></span></div>
+        </div>
+        <div class="employees">
+            <h3>Employees</h3>
+            <table id="employeeTable">
+                <thead>
+                    <tr><th>Name</th><th>Grade</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="actions">
+            <input type="number" id="payAmount" placeholder="Amount">
+            <button id="payBtn">Pay Employee</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

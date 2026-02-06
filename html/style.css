@@ -1,0 +1,98 @@
+.container {
+    background: rgba(0,0,0,0.7);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 500px;
+    margin: 60px auto;
+    background: #23272a;
+    border-radius: 12px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 24px 32px 32px 32px;
+    position: relative;
+    display: block;
+}
+.hidden {
+    display: none;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+}
+.header h2 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+#closeBtn {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ff5c5c;
+    transition: color 0.2s;
+}
+#closeBtn:hover {
+    color: #ff1a1a;
+}
+.info {
+    margin-bottom: 18px;
+}
+.info div {
+    margin-bottom: 6px;
+}
+.employees h3 {
+    margin: 0 0 8px 0;
+}
+#employeeTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2c2f33;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#employeeTable th, #employeeTable td {
+    padding: 8px 10px;
+    text-align: left;
+}
+#employeeTable th {
+    background: #23272a;
+    color: #aaa;
+}
+#employeeTable tr:nth-child(even) {
+    background: #23272a;
+}
+#employeeTable tr:hover {
+    background: #36393f;
+}
+.actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 8px;
+}
+#payAmount {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: #2c2f33;
+    color: #fff;
+}
+#payBtn {
+    background: #7289da;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+#payBtn:hover {
+    background: #5b6eae;
+}
