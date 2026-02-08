@@ -113,17 +113,6 @@ The script includes an automatic version checker that runs when the server start
 - List specific files that need to be updated
 - Provide a download link to the latest release
 
-### GitHub Workflow Automation
-
-This resource includes a GitHub Actions workflow (`.github/workflows/update-version.yml`) that automatically updates the `version.json` file when you create a new release tag:
-
-1. Create a new tag in the format `v1.0.0`
-2. Push the tag to GitHub: `git push origin v1.0.0`
-3. The workflow automatically updates `version.json` with the new version
-4. Users will see update notifications when starting their servers
-
-**Note:** You'll need to add a `GH_TOKEN_CNEW` secret to your GitHub repository settings for the workflow to work.
-
 **Enjoy your advanced boss menu!** 💼📋
 
 ## Credits
