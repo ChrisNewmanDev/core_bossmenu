@@ -1,0 +1,36 @@
+name: Update Version
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Extract version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+      
+      - name: Set resource and repo
+        run: |
+          echo "RESOURCE_NAME=core_bossmenu" >> $GITHUB_ENV
+          echo "GITHUB_REPO=ChrisNewmanDev/core_bossmenu" >> $GITHUB_ENV
+      
+      - name: Update version.json
+        run: |
+          echo "{\"version\": \"$VERSION\", \"resource_name\": \"$RESOURCE_NAME\", \"github_repo\": \"$GITHUB_REPO\"}" > version.json
+      
+      - name: Commit and push version.json to main
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin main
+          git checkout main
+          git add version.json
+          git commit -m "Update version.json to $VERSION" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.CORE_BOSSMENU }}@github.com/ChrisNewmanDev/core_bossmenu.git main

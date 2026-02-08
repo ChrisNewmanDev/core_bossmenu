@@ -3,22 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Boss Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="bossmenu" class="container hidden">
         <div class="header">
-            <h2>Boss Menu</h2>
+            <h2>💼 Boss Menu</h2>
             <span id="closeBtn">&times;</span>
         </div>
         <div class="info">
-            <div><b>Job:</b> <span id="jobName"></span></div>
-            <div><b>Grade:</b> <span id="jobGrade"></span></div>
-            <div><b>Account Balance:</b> $<span id="accountBalance"></span></div>
+            <div><b>Job</b> <span id="jobName"></span></div>
+            <div><b>Your Grade</b> <span id="jobGrade"></span></div>
+            <div><b>Account Balance</b> <span id="accountBalance"></span></div>
+        </div>
+        <div class="money-management">
+            <h3>💰 Money Management</h3>
+            <div class="money-actions">
+                <input type="number" id="moneyAmount" placeholder="Enter amount...">
+                <button id="depositBtn">💵 Deposit</button>
+                <button id="withdrawBtn">💸 Withdraw</button>
+            </div>
         </div>
         <div class="employees">
-            <h3>Employees</h3>
+            <h3>🧑‍💼 Employees</h3>
             <table id="employeeTable">
                 <thead>
                     <tr><th>Name</th><th>Grade</th><th>Actions</th></tr>
@@ -26,9 +38,54 @@
                 <tbody></tbody>
             </table>
         </div>
-        <div class="actions">
-            <input type="number" id="payAmount" placeholder="Amount">
-            <button id="payBtn">Pay Employee</button>
+        <div class="nearby-players">
+            <h3 id="hireTitle">👥 Hire Employee</h3>
+            <div id="nearbyPlayersList" class="nearby-list">
+                <p class="no-nearby">No players nearby</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminmenu" class="container hidden">
+        <div class="header">
+            <h2>🛡️ Boss Menu Admin</h2>
+            <span id="adminCloseBtn">&times;</span>
+        </div>
+        <div class="admin-content">
+            <div id="jobListView" class="view-content">
+                <p class="admin-description">Select a job to manage its boss menu locations.</p>
+                <div class="job-search">
+                    <input type="text" id="jobSearch" placeholder="🔍 Search for a job...">
+                </div>
+                <div class="table-container">
+                    <table class="jobs-table" id="jobsTable">
+                        <thead>
+                            <tr>
+                                <th>Job Name</th>
+                                <th>Label</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jobsList">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div id="jobDetailView" class="view-content hidden">
+                <div class="detail-header">
+                    <button id="backBtn" class="back-button">← Back</button>
+                    <h3 id="selectedJobName" class="selected-job-title"></h3>
+                </div>
+                <div class="detail-actions">
+                    <button id="aimLocationBtn" class="action-btn aim-btn">Place Location</button>
+                </div>
+                <div class="locations-section">
+                    <h4 class="section-title">📍 Existing Locations</h4>
+                    <div class="detail-locations-list" id="detailLocationsList">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
