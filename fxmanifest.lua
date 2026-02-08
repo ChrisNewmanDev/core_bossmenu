@@ -3,7 +3,7 @@ game 'gta5'
 
 description 'Modern Boss Menu'
 author 'ChrisNewmanDev'
-version '1.0.1'
+version '1.0.0'
 
 shared_scripts {
     'config.lua'
