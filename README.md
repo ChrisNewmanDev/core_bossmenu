@@ -129,3 +129,4 @@ This resource includes a GitHub Actions workflow (`.github/workflows/update-vers
 ## Credits
 - **Framework:** QB-Core
 - **Developer:** ChrisNewmanDev
+test version checker
