@@ -96,7 +96,9 @@ function renderEmployees(employees, grades) {
         let gradeOptions = '<option value="" disabled selected>🔽 Select Rank</option>';
         if (grades && grades.length > 0) {
             grades.forEach(grade => {
-                gradeOptions += `<option value="${grade.level}">${grade.level} - ${grade.name}</option>`;
+                // fix auto select the employees current grade in the dropdown
+                const isCurrentGrade = grade.level === emp.grade ? 'selected' : '';
+                gradeOptions += `<option value="${grade.level}" ${isCurrentGrade}>${grade.level} - ${grade.name}</option>`;
             });
         }
         tr.innerHTML = `
